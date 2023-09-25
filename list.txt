@@ -1,0 +1,30 @@
+• memset
+• bzero
+• memcpy
+• memccpy
+• memmove
+• memchr
+• memcmp
+• strlen	OK
+• strdup	OK (ft_strlen)
+• strcpy	OK
+• strncpy	OK (ft_strlen)
+• strcat	OK (ft_strlen)
+• strncat	OK (ft_strlen)
+• strlcat	
+• strchr
+• strrchr
+• strstr
+• strnstr
+• strcmp
+• strncmp
+• atoi		OK
+• isalpha
+• isdigit
+• isalnum
+• isascii
+• isprint
+• toupper
+• tolower
+• putnbr	OK
+
