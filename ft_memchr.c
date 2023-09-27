@@ -6,7 +6,7 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 22:04:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 22:17:07 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:37:31 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*memchr(const void *str, int c, size_t n)
 {
 	unsigned char	*ptr;
 	unsigned char	ch;
-	size_t	i;
+	size_t			i;
 
 	ptr = (unsigned char *)str;
 	ch = (unsigned char)c;

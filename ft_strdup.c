@@ -6,16 +6,15 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:23:37 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/24 10:41:25 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:02:39 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdlib.h>
 
 char	*strdup(const char *s1)
 {
-	int	i;
+	int		i;
 	char	*dest;
 
 	i = 0;
