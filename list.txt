@@ -1,30 +1,29 @@
-• memset
-• bzero
-• memcpy
-• memccpy
-• memmove
-• memchr
-• memcmp
 • strlen	OK
 • strdup	OK (ft_strlen)
 • strcpy	OK
 • strncpy	OK (ft_strlen)
 • strcat	OK (ft_strlen)
 • strncat	OK (ft_strlen)
-• strlcat	
-• strchr
-• strrchr
-• strstr
-• strnstr
-• strcmp
-• strncmp
+• strlcat	OK (ft_strlen)
+• strchr	OK
+• strrchr	OK (ft_strlen)
+• strstr	OK (ft_strlen)
+• strnstr	OK (ft_strlen)
+• strcmp	OK
+• strncmp	OK
 • atoi		OK
-• isalpha
-• isdigit
-• isalnum
-• isascii
-• isprint
-• toupper
-• tolower
+• isalpha	OK
+• isdigit	OK
+• isalnum	OK
+• isascii	OK
+• isprint	OK
+• toupper	OK
+• tolower	OK
 • putnbr	OK
-
+• memset	OK
+• bzero		OK
+• memcpy	OK
+• memccpy	OK
+• memmove	OK
+• memchr	OK
+• memcmp	OK
