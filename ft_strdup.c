@@ -6,13 +6,13 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:23:37 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 23:02:39 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:32:13 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <libft.h>
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
 	char	*dest;

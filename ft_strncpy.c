@@ -6,9 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:29:10 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 23:05:39 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:37:21 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strncpy(char *dest, const char *src, size_t len)
 {

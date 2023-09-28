@@ -6,9 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:28:54 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/25 15:35:30 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:36:21 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_strcmp(const char *s1, const char *s2, size_t n)
 {

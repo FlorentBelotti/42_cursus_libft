@@ -6,9 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:36:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/25 14:42:47 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:37:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strrchr(const char *s, int c)
 {

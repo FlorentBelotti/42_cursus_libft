@@ -6,11 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:32:51 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 15:36:44 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:25:40 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

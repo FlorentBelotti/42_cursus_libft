@@ -6,9 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:06:38 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/25 15:12:02 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:37:27 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {

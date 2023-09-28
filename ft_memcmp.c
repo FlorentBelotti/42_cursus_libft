@@ -6,11 +6,13 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 22:17:52 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 22:38:39 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:35:12 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+#include <libft.h>
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*p1;
 	unsigned char	*p2;

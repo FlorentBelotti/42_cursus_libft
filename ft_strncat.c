@@ -6,11 +6,13 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:46:29 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 23:04:15 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:37:03 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strncat(char *dest, const char *src, size_t n)
+#include <libft.h>
+
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	int	i;
 	int	j;

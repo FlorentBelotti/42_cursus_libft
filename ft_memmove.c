@@ -6,9 +6,11 @@
 /*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:05:26 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/27 22:46:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:35:20 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
