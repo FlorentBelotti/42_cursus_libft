@@ -1,0 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    bonus_functions.txt                                :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/02 15:00:52 by fbelotti          #+#    #+#              #
+#    Updated: 2023/10/02 15:02:08 by fbelotti         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+lstnew
+lstadd_front
+lstsize
+lstlast
+lstadd_back
+lsdelone
+lstclear
+lstiter
+lstmap
