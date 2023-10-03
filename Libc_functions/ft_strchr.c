@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:23:40 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/28 16:17:54 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/03 17:51:28 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
 		{
-			return (&s[i]);
+			return ((char *)&s[i]);
 		}
 		i++;
 	}
 	if (c == '\0')
 	{
-		return (&s[i]);
+		return ((char *)&s[i]);
 	}
-	return (0);
+	return (NULL);
 }
