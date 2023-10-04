@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:36:42 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/03 18:07:08 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:27:03 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	s_len;
+	ssize_t	s_len;
 
-	s_len = ft_strlen(s);
+	s_len = (ssize_t)ft_strlen(s);
 	while (s_len >= 0)
 	{
 		if (s[s_len] == c)
