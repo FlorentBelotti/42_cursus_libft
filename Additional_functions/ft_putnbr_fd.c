@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <fbelotti@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 14:43:00 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/09/28 16:35:32 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:44:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	ft_putchar(char c)
 {
-	write (1, &c, 1);
+	write (fd, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (nb == "-2147483648")
+	if (n == "-2147483648")
 	{
-		write (1, "-2147483648", 11);
+		write (fd, "-2147483648", 11);
 	}
-	if (nb < 0)
+	if (n < 0)
 	{
-		write (1, '-', 1);
-		nb = -nb;
+		write (fd, '-', 1);
+		n = -n;
 	}
-	while (nb > 9)
+	while (n > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
+		ft_putnr(n / 10);
+		ft_putchar(n % 10 + '0');
 	}
 }
