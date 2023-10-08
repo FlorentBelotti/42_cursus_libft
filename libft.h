@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:02:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/03 16:24:34 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/08 15:49:44 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdio.h>
 
 int		ft_isalnum(char c);
+
+int		count_numbers(int n);
 
 int		ft_isalpha(char c);
 
@@ -40,6 +42,14 @@ int		ft_toupper(int c);
 
 void	ft_bzero(void *m, size_t n);
 
+void	ft_putendl_fd(char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putchar_fd(char c, int fd);
+
 void	*ft_memchr(const void *str, int c, size_t n);
 
 void	*ft_memcpy(void *dest, const void *src, size_t count);
@@ -48,11 +58,23 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 
 void	*ft_memset(void *m, int c, size_t n);
 
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 void	*ft_calloc(size_t num, size_t size);
 
 char	*ft_strchr(const char *s, int c);
 
 char	*ft_strdup(const char *s1);
+
+char	**ft_split(char const *s, char c);
+
+char	*ft_strtrim(char *s, char *set);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+char	*ft_strjoin(const char *s1, const char *s2);
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 

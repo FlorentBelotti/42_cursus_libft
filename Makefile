@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/03 16:19:17 by fbelotti         ###   ########.fr        #
+#    Updated: 2023/10/08 15:51:58 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,17 @@ SRCS	=	ft_strlen.c \
 			ft_strdup.c \
 			ft_strrchr.c \
 			ft_atoi.c \
+			ft_itoa.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_split.c \
+			ft_striteri.c \
+			ft_strjoin.c \
+			ft_strmapi.c \
+			ft_strtrim.c \
+			ft_substr.c \
 
 GCC	=	gcc -Wall -Wextra -Werror
 
