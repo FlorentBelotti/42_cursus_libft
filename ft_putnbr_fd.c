@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 14:43:00 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/10 16:58:48 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:19:54 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write (fd, "-", 1);
 		n = -n;
 	}
-	while (n >= 10)
+	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 	}
