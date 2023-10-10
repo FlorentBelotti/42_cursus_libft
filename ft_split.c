@@ -6,89 +6,101 @@
 /*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 22:14:25 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/08 16:00:50 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:52:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_count(const char *s, char c)
+int	count_words(const char *s, char c)
 {
-	size_t	count;
-	size_t	i;
+	int	i;
+	int	word_count;
 
-	count = 0;
 	i = 0;
+	word_count = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i])
-			count++;
-		while (s[i] != c && s[i])
+		if (s[i])
+			word_count++;
+		while (s[i] && s[i] != c)
 			i++;
 	}
-	return (count);
+	return (word_count);
 }
 
-void	free_array(char **array, int size)
+int	word_length(const char *s, char c)
+{
+	int	word_len;
+
+	word_len = 0;
+	while (s[word_len] && s[word_len] != c)
+	{
+		word_len++;
+	}
+	return (word_len);
+}
+
+char	*extract_word(const char *s, int word_len)
+{
+	int		i;
+	char	*word_extract;
+
+	i = 0;
+	word_extract = (char *)malloc(word_len + 1);
+	if (!word_extract)
+		return (NULL);
+	while (i < word_len)
+	{
+		word_extract[i] = s[i];
+		i++;
+	}
+	word_extract[i] = '\0';
+	return (word_extract);
+}
+
+char	**free_split(char **arr)
 {
 	int	i;
 
-	i = 0;
-	while (i < size)
+	i = 0 ;
+	if (!arr)
+		return (NULL);
+	while (arr[i])
 	{
-		free(array[i]);
+		free(arr[i]);
 		i++;
 	}
-	free(array);
-}
-
-char	*create_substring_and_advance(char **sub_start, char c)
-{
-	char	*sub_end;
-	char	*word;
-
-	if (**sub_start != c)
-	{
-		sub_end = ft_strchr(*sub_start, c);
-		if (!sub_end)
-			sub_end = ft_strchr(*sub_start, '\0');
-
-		word = ft_substr(*sub_start, 0, sub_end - *sub_start);
-
-		if (*sub_end)
-			*sub_start = sub_end + 1;
-		else
-			*sub_start = sub_end;
-
-		return (word);
-	}
-	(*sub_start)++;
+	free(arr);
 	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**sub_array;
-	char	*sub_start;
 	int		i;
+	int		j;
+	int		len;
+	char	**arr;
 
-	sub_array = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!s)
-		return (NULL);
 	i = 0;
-	sub_start = (char *)s;
-	while (*sub_start)
+	j = 0;
+	arr = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!arr)
+		return (NULL);
+	while (s[i])
 	{
-		if ((sub_array[i] = create_substring_and_advance(&sub_start, c)))
-			i++;
-		else if (!sub_array[i])
+		if (s[i++] != c)
 		{
-			free_array(sub_array, i);
-			return (NULL);
+			len = word_length(&s[i - 1], c);
+			arr[j] = extract_word(&s[i - 1], len);
+			if (!arr[j])
+				return (free_split(arr));
+			i += len - 1;
+			j++;
 		}
 	}
-	sub_array[i] = NULL;
-	return (sub_array);
+	arr[j] = NULL;
+	return (arr);
 }
