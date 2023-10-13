@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/13 11:54:42 by fbelotti         ###   ########.fr        #
+#    Updated: 2023/10/13 13:42:29 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ SRCBONUS = ft_lstadd_back.c \
 			ft_lstnew.c \
 			ft_lstsize.c \
 
-GCC	=	gcc -Wall -Wextra -Werror
+CC	= gcc -Wall -Wextra -Werror
 
 RM	=	rm -f
 
@@ -77,13 +77,13 @@ $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c $(HEADER)
-	$(GCC) -c $< -o $@
+	$(CC) -c $< -o $@
 
-bonus :
-	@make MAKEBONUS=1 all
+bonus : $(OBJS) $(OBJSBONUS)
+	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	rm -f $(NAME)
