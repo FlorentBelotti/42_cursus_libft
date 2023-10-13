@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/11 11:08:06 by fbelotti         ###   ########.fr        #
+#    Updated: 2023/10/12 01:07:23 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,15 @@ SRCS	=	ft_strlen.c \
 			ft_strmapi.c \
 			ft_strtrim.c \
 			ft_substr.c \
+			ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c \
 
 GCC	=	gcc -Wall -Wextra -Werror
 
