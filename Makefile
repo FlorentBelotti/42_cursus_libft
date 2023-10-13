@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/12 01:07:23 by fbelotti         ###   ########.fr        #
+#    Updated: 2023/10/13 11:54:42 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS	=	ft_strlen.c \
 			ft_strmapi.c \
 			ft_strtrim.c \
 			ft_substr.c \
-			ft_lstadd_back.c \
+
+SRCBONUS = ft_lstadd_back.c \
 			ft_lstadd_front.c \
 			ft_lstclear.c \
 			ft_lstdelone.c \
@@ -62,7 +63,13 @@ NAME	=	libft.a
 
 OBJS	=	$(SRCS:.c=.o)
 
+OBJSBONUS = $(SRCBONUS:.c=.o)
+
 HEADER	=	libft.h
+
+ifdef MAKEBONUS
+			OBJS = $(OBJSBONUS)
+endif
 
 all: $(NAME)
 
@@ -71,6 +78,9 @@ $(NAME) : $(OBJS)
 
 %.o: %.c $(HEADER)
 	$(GCC) -c $< -o $@
+
+bonus :
+	@make MAKEBONUS=1 all
 
 clean :
 	rm -f $(OBJS)
