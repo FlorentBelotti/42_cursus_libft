@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:02:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 16:31:14 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/12 18:31:59 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,12 @@ void	clean_list(t_gnl **list);
 void	create_list(t_gnl **list, int fd);
 void	malloc_of_line(char **line, t_gnl *list);
 void	free_list(t_gnl *list);
+
+	/* CUSTOM */
+
+long	ft_strtol(const char *str);
+int		ft_ishex(char c);
+void	ft_free_array(char **str);
+void	ft_free_list(t_list *head);
 
 #endif
