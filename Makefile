@@ -3,73 +3,51 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/13 13:42:29 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/03/12 16:00:15 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_strlen.c \
-			ft_isascii.c \
-			ft_memcpy.c \
-			ft_strlcat.c \
-			ft_tolower.c \
-			ft_bzero.c \
-			ft_isdigit.c \
-			ft_memmove.c \
-			ft_strlcpy.c \
-			ft_toupper.c \
-			ft_calloc.c \
-			ft_isprint.c \
-			ft_memset.c \
-			ft_strncmp.c \
-			ft_isalnum.c \
-			ft_memchr.c \
-			ft_strchr.c \
-			ft_strnstr.c \
-			ft_isalpha.c \
-			ft_memcmp.c \
-			ft_strdup.c \
-			ft_strrchr.c \
-			ft_atoi.c \
-			ft_itoa.c \
-			ft_putchar_fd.c \
-			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_split.c \
-			ft_striteri.c \
-			ft_strjoin.c \
-			ft_strmapi.c \
-			ft_strtrim.c \
-			ft_substr.c \
-
-SRCBONUS = ft_lstadd_back.c \
-			ft_lstadd_front.c \
-			ft_lstclear.c \
-			ft_lstdelone.c \
-			ft_lstiter.c \
-			ft_lstlast.c \
-			ft_lstmap.c \
-			ft_lstnew.c \
-			ft_lstsize.c \
-
-CC	= gcc -Wall -Wextra -Werror
-
-RM	=	rm -f
-
 NAME	=	libft.a
-
-OBJS	=	$(SRCS:.c=.o)
-
-OBJSBONUS = $(SRCBONUS:.c=.o)
-
 HEADER	=	libft.h
 
-ifdef MAKEBONUS
-			OBJS = $(OBJSBONUS)
-endif
+CC	= gcc -Wall -Wextra -Werror
+RM	=	rm -f
+
+LIBFT_SRCS	=	./libft_srcs/ft_strlen.c ./libft_srcs/ft_isascii.c \
+				./libft_srcs/ft_memcpy.c ./libft_srcs/ft_strlcat.c \
+				./libft_srcs/ft_tolower.c ./libft_srcs/ft_bzero.c \
+				./libft_srcs/ft_isdigit.c ./libft_srcs/ft_memmove.c \
+				./libft_srcs/ft_strlcpy.c ./libft_srcs/ft_toupper.c \
+				./libft_srcs/ft_calloc.c ./libft_srcs/ft_isprint.c \
+				./libft_srcs/ft_memset.c ./libft_srcs/ft_strncmp.c \
+				./libft_srcs/ft_isalnum.c ./libft_srcs/ft_memchr.c \
+				./libft_srcs/ft_strchr.c ./libft_srcs/ft_strnstr.c \
+				./libft_srcs/ft_isalpha.c ./libft_srcs/ft_memcmp.c \
+				./libft_srcs/ft_strdup.c ./libft_srcs/ft_strrchr.c \
+				./libft_srcs/ft_atoi.c ./libft_srcs/ft_itoa.c \
+				./libft_srcs/ft_putendl_fd.c ./libft_srcs/ft_putnbr_fd.c \
+				./libft_srcs/ft_putstr_fd.c ./libft_srcs/ft_split.c \
+				./libft_srcs/ft_putchar_fd.c ./libft_srcs/ft_striteri.c \
+				./libft_srcs/ft_strjoin.c ./libft_srcs/ft_strmapi.c \
+				./libft_srcs/ft_strtrim.c ./libft_srcs/ft_substr.c \
+				./libft_bonus/ft_lstadd_back.c ./libft_bonus/ft_lstadd_front.c \
+				./libft_bonus/ft_lstclear.c ./libft_bonus/ft_lstdelone.c \
+				./libft_bonus/ft_lstiter.c ./libft_bonus/ft_lstlast.c \
+				./libft_bonus/ft_lstmap.c ./libft_bonus/ft_lstnew.c \
+				./libft_bonus/ft_lstsize.c \
+
+PRINTF_SRCS	=	./ft_printf/ft_printf_srcs/ft_printf_conversions.c \
+				./ft_printf/ft_printf_srcs/ft_printf_main.c \
+				./ft_printf/ft_printf_srcs/ft_printf_utils.c \
+
+GNL_SRCS	=	./get_next_line/gnl_srcs/get_next_line_bonus.c \
+				./get_next_line/gnl_srcs/get_next_line_bonus_utils.c \
+
+SRCS	= $(LIBFT_SRCS) $(PRINTF_SRCS) $(GNL_SRCS)
+OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -78,9 +56,6 @@ $(NAME) : $(OBJS)
 
 %.o: %.c $(HEADER)
 	$(CC) -c $< -o $@
-
-bonus : $(OBJS) $(OBJSBONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
 clean :
 	rm -f $(OBJS) $(OBJSBONUS)
