@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2024/03/12 18:37:44 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/03/15 16:39:09 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ GNL_SRCS	=	./get_next_line/gnl_srcs/get_next_line_bonus.c \
 
 CUSTOM		=	./custom/ft_strtol.c ./custom/ft_ishex.c \
 				./custom/ft_free_array.c ./custom/ft_free_list.c \
+				./custom/ft_strcmp.c \
 
 SRCS	= $(LIBFT_SRCS) $(PRINTF_SRCS) $(GNL_SRCS) $(CUSTOM)
 OBJS	=	$(SRCS:.c=.o)

@@ -6,17 +6,25 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:02:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 18:31:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:37:06 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/* BUFFER_SIZE FOR GNL */
+/* DEFINITIONS */
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
+# endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
 # endif
 
 /* INCLUDES */
@@ -124,5 +132,6 @@ long	ft_strtol(const char *str);
 int		ft_ishex(char c);
 void	ft_free_array(char **str);
 void	ft_free_list(t_list *head);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
