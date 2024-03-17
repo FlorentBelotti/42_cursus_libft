@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2024/03/15 16:39:09 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/03/17 15:56:17 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ LIBFT_SRCS	=	./libft_srcs/ft_strlen.c ./libft_srcs/ft_isascii.c \
 				./libft_bonus/ft_lstmap.c ./libft_bonus/ft_lstnew.c \
 				./libft_bonus/ft_lstsize.c \
 
-PRINTF_SRCS	=	./ft_printf/ft_printf_srcs/ft_printf_conversions.c \
-				./ft_printf/ft_printf_srcs/ft_printf_main.c \
-				./ft_printf/ft_printf_srcs/ft_printf_utils.c \
+PRINTF_SRCS	=	./ft_printf/ft_printf_conversions.c \
+				./ft_printf/ft_printf_main.c \
+				./ft_printf/ft_printf_utils.c \
 
-GNL_SRCS	=	./get_next_line/gnl_srcs/get_next_line_bonus.c \
-				./get_next_line/gnl_srcs/get_next_line_bonus_utils.c \
+GNL_SRCS	=	./get_next_line/get_next_line_bonus.c \
+				./get_next_line/get_next_line_bonus_utils.c \
 
 CUSTOM		=	./custom/ft_strtol.c ./custom/ft_ishex.c \
 				./custom/ft_free_array.c ./custom/ft_free_list.c \
