@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:50:46 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 16:15:41 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:04:05 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
 int	is_conversion(char c)
 {

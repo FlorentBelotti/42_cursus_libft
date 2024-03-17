@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:11:12 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 16:15:36 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:03:55 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
 void	clean_list(t_gnl **list)
 {

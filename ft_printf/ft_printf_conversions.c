@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:18:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 16:15:44 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:04:01 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
 int	ft_print_digit_lower(long n, int base)
 {

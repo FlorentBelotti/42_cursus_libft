@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 16:09:00 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 16:15:40 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/03/17 16:04:09 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 
 int	ft_putchar(int c)
 {
