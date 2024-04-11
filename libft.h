@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:02:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/15 16:37:06 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/04/11 21:49:18 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_gnl {
 int		ft_isalnum(char c);
 int		count_numbers(int n);
 int		ft_isalpha(char c);
-int		ft_isascii(char c);
+int		ft_isascii(int c);
 int		ft_isdigit(char c);
 int		ft_isprint(char c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
