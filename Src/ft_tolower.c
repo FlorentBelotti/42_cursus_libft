@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/09/27 15:35:49 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+int	ft_tolower(int c)
 {
-	t_list	*current;
-	t_list	*next;
-
-	current = head;
-	while (current != NULL)
+	if (c >= 'A' && c <= 'Z')
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		c += 32;
+		return (c);
 	}
-	return ;
+	return (c);
 }

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/10/06 14:59:35 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_list	*current;
-	t_list	*next;
+	char	*str;
+	int		i;
 
-	current = head;
-	while (current != NULL)
+	i = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		str[i] = (*f)((unsigned int) i, s[i]);
+		i++;
 	}
-	return ;
+	str[i] = '\0';
+	return (str);
 }

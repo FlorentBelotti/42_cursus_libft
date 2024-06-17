@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/10/05 13:21:24 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_list	*current;
-	t_list	*next;
+	size_t	s_len;
+	char	*sub;
 
-	current = head;
-	while (current != NULL)
-	{
-		next = current->next;
-		free (current);
-		current = next;
-	}
-	return ;
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	ft_memcpy(sub, &s[start], len);
+	sub[len] = '\0';
+	return (sub);
 }

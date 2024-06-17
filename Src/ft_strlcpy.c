@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/10/02 18:15:31 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	t_list	*current;
-	t_list	*next;
+	size_t	i;
+	size_t	src_len;
 
-	current = head;
-	while (current != NULL)
+	i = 0;
+	src_len = ft_strlen(src);
+	if (size == 0)
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		return (src_len);
 	}
-	return ;
+	while (i < size - 1 && src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (src_len);
 }

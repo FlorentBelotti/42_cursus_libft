@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/10/12 00:44:20 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*current;
-	t_list	*next;
+	t_list	*new;
+	t_list	*new_list;
 
-	current = head;
-	while (current != NULL)
+	if (!lst)
+		return (NULL);
+	new = ft_lstnew((*f)(lst->content));
+	if (!new)
+		return (NULL);
+	new_list = new;
+	lst = lst->next;
+	while (lst)
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		new->next = ft_lstnew((*f)(lst->content));
+		if (!new->content)
+		{
+			ft_lstclear(&new_list, (*del));
+			return (NULL);
+		}
+		new = new->next;
+		lst = lst->next;
 	}
-	return ;
+	return (new_list);
 }

@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:09:14 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 18:17:57 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/17 17:11:42 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../Includes/libft.h"
 
 long	ft_strtol(const char *str)
 {

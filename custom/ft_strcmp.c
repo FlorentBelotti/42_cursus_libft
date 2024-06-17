@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:35:41 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/15 16:37:10 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/17 17:11:37 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../Includes/libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/09/27 16:02:43 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+void	*ft_memset(void *m, int c, size_t n)
 {
-	t_list	*current;
-	t_list	*next;
+	unsigned char	*ptr;
+	size_t			i;
 
-	current = head;
-	while (current != NULL)
+	i = 0;
+	ptr = (unsigned char *)m;
+	while (i < n)
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		ptr[i] = (unsigned char)c;
+		i++;
 	}
-	return ;
+	return (m);
 }

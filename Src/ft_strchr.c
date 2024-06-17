@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/09/24 17:23:40 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*current;
-	t_list	*next;
+	int	i;
 
-	current = head;
-	while (current != NULL)
+	i = 0;
+	while (s[i])
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		if (s[i] == (unsigned char) c)
+			return ((char *)s + i);
+		i++;
 	}
-	return ;
+	if ((unsigned char)c == '\0')
+		return ((char *)s + i);
+	return (NULL);
 }

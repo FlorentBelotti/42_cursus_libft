@@ -6,11 +6,11 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 18:24:20 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/03/12 18:33:43 by fbelotti         ###   ########.fr       */
+/*   Updated: 2024/06/17 17:11:04 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../Includes/libft.h"
 
 void	ft_free_array(char **str)
 {

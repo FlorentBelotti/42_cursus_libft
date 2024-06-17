@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 18:31:05 by fbelotti          #+#    #+#             */
-/*   Updated: 2024/06/17 17:11:13 by fbelotti         ###   ########.fr       */
+/*   Created: 2023/09/25 15:29:35 by fbelotti          #+#    #+#             */
+/*   Updated: 2024/06/17 16:46:48 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/libft.h"
 
-void	ft_free_list(t_list *head)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_list	*current;
-	t_list	*next;
+	size_t	i;
 
-	current = head;
-	while (current != NULL)
+	i = 0;
+	while (i < n && (unsigned char)s1[i] == (unsigned char)s2[i] && s1[i])
 	{
-		next = current->next;
-		free (current);
-		current = next;
+		i++;
 	}
-	return ;
+	if (i == n || (s1[i] == '\0' && s2[i] == '\0'))
+	{
+		return (0);
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
