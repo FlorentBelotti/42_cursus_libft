@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
+#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2024/06/17 22:13:42 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/06/17 22:54:07 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ SRC = $(wildcard $(SRCDIR)/*.c)
 BONUS = $(wildcard $(BONUSDIR)/*.c)
 CUSTOM = $(wildcard $(CUSTOMDIR)/*.c)
 
-OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o) \
-      $(BONUS:$(BONUSDIR)/%.c=$(OBJDIR)/%.o) \
-      $(CUSTOM:$(CUSTOMDIR)/%.c=$(OBJDIR)/%.o)
+OBJ =	$(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o) \
+		$(BONUS:$(BONUSDIR)/%.c=$(OBJDIR)/%.o) \
+		$(CUSTOM:$(CUSTOMDIR)/%.c=$(OBJDIR)/%.o)
 
 INCLUDES = -I$(INCDIR)
 
@@ -38,18 +38,22 @@ $(NAME): $(OBJ)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo -libft: Source directory compilation...
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJDIR)/%.o: $(BONUSDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo -libft: Bonus directory compilation...
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJDIR)/%.o: $(CUSTOMDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo -libft: Custom directory compilation...
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJDIR)
+	@echo -libft: all is clean.
 
 fclean: clean
 	@rm -f $(NAME)
