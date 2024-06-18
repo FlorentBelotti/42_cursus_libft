@@ -3,17 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2024/06/17 22:54:07 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/06/18 14:01:30 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+AUTHOR = Florent Belotti
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+DEBUG_FLAGS = -g -O0
 
 SRCDIR = Src
 BONUSDIR = Bonus
@@ -21,43 +23,67 @@ INCDIR = includes
 OBJDIR = Obj
 CUSTOMDIR = Custom
 
-SRC = $(wildcard $(SRCDIR)/*.c)
-BONUS = $(wildcard $(BONUSDIR)/*.c)
-CUSTOM = $(wildcard $(CUSTOMDIR)/*.c)
+SRC = $(shell find $(SRCDIR) -name \*.c -type f -print)
+BONUS = $(shell find $(BONUSDIR) -name \*.c -type f -print)
+CUSTOM = $(shell find $(CUSTOMDIR) -name \*.c -type f -print)
 
-OBJ =	$(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o) \
-		$(BONUS:$(BONUSDIR)/%.c=$(OBJDIR)/%.o) \
-		$(CUSTOM:$(CUSTOMDIR)/%.c=$(OBJDIR)/%.o)
+OBJ_SRC = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
+OBJ_BONUS = $(patsubst $(BONUSDIR)/%.c,$(OBJDIR)/%.o,$(BONUS))
+OBJ_CUSTOM = $(patsubst $(CUSTOMDIR)/%.c,$(OBJDIR)/%.o,$(CUSTOM))
+
+OBJ = $(OBJ_SRC) $(OBJ_BONUS) $(OBJ_CUSTOM)
+
+DEPS = $(OBJ:.o=.d)
 
 INCLUDES = -I$(INCDIR)
 
-all: $(NAME)
+all: intro $(NAME)
 
-$(NAME): $(OBJ)
-	@ar rcs $@ $^
+intro:
+	@echo "\n==================================="
+	@echo "Compiling:	$(NAME)"
+	@echo "Author:		$(AUTHOR)"
+	@echo "===================================\n"
+
+$(NAME): message_src $(OBJ_SRC) message_bonus $(OBJ_BONUS) message_custom $(OBJ_CUSTOM)
+	@echo "libft: Creating library $@..."
+	@ar rcs $@ $(OBJ)
+	@echo "libft: Library $@ created.\n"
+
+message_src:
+	@echo "libft: $(SRCDIR): compilation en cours..."
+
+message_bonus:
+	@echo "libft: $(BONUSDIR): compilation en cours..."
+
+message_custom:
+	@echo "libft: $(CUSTOMDIR): compilation en cours...\n"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@echo -libft: Source directory compilation...
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
 
 $(OBJDIR)/%.o: $(BONUSDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@echo -libft: Bonus directory compilation...
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
 
 $(OBJDIR)/%.o: $(CUSTOMDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@echo -libft: Custom directory compilation...
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
+
+-include $(DEPS)
 
 clean:
+	@echo "libft: clean: Cleaning object files..."g
 	@rm -rf $(OBJDIR)
-	@echo -libft: all is clean.
 
 fclean: clean
+	@echo "libft: fclean: Cleaning all build files..."
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: re
+
+.PHONY: all clean fclean re debug intro message_src message_bonus message_custom
