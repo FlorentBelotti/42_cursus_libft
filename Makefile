@@ -6,7 +6,7 @@
 #    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 10:53:01 by fbelotti          #+#    #+#              #
-#    Updated: 2024/06/18 14:01:30 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/06/18 16:30:10 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,40 +45,33 @@ intro:
 	@echo "Author:		$(AUTHOR)"
 	@echo "===================================\n"
 
-$(NAME): message_src $(OBJ_SRC) message_bonus $(OBJ_BONUS) message_custom $(OBJ_CUSTOM)
-	@echo "libft: Creating library $@..."
+$(NAME): $(OBJ_SRC) $(OBJ_BONUS) $(OBJ_CUSTOM)
 	@ar rcs $@ $(OBJ)
-	@echo "libft: Library $@ created.\n"
-
-message_src:
-	@echo "libft: $(SRCDIR): compilation en cours..."
-
-message_bonus:
-	@echo "libft: $(BONUSDIR): compilation en cours..."
-
-message_custom:
-	@echo "libft: $(CUSTOMDIR): compilation en cours...\n"
+	@echo "\nlibft: Library $@ created.\n"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
+	@echo libft:	Src:	compiling file $@
 	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
 
 $(OBJDIR)/%.o: $(BONUSDIR)/%.c
 	@mkdir -p $(OBJDIR)
+	@echo libft:	Bonus:	compiling file $@
 	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
 
 $(OBJDIR)/%.o: $(CUSTOMDIR)/%.c
 	@mkdir -p $(OBJDIR)
+	@echo libft:	Custom:	compiling file $@
 	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
 
 -include $(DEPS)
 
 clean:
-	@echo "libft: clean: Cleaning object files..."g
+	@echo "libft:	clean:	Cleaning object files..."
 	@rm -rf $(OBJDIR)
 
 fclean: clean
-	@echo "libft: fclean: Cleaning all build files..."
+	@echo "libft:	fclean:	Cleaning all build files..."
 	@rm -f $(NAME)
 
 re: fclean all
