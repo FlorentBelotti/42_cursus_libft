@@ -9,11 +9,22 @@
         <h1>42_cursus_libft</h1>
         <p>Your very own library for future C projects at 42 School.</p>
     </header>
-    <section>
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#common-rules">Common Rules</a></li>
+            <li><a href="#mandatory-part">Mandatory Part</a></li>
+            <li><a href="#bonus-part">Bonus Part</a></li>
+            <li><a href="#compilation">Compilation</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+        </ul>
+    </nav>
+    <section id="introduction">
         <h2>Introduction</h2>
         <p>The Libft project aims to help you code a C library consisting of common utility functions that you will reuse in your future projects. This will enhance your understanding of low-level programming and familiarize you with useful standard functions.</p>
     </section>
-    <section>
+    <section id="common-rules">
         <h2>Common Rules</h2>
         <ul>
             <li>The project must be written in C.</li>
@@ -24,7 +35,7 @@
             <li>The Makefile must not relink.</li>
         </ul>
     </section>
-    <section>
+    <section id="mandatory-part">
         <h2>Mandatory Part</h2>
         <p>Create your own library libft.a that includes the following functions, which are detailed in the project description:</p>
         <ul>
@@ -34,7 +45,7 @@
             <li>More complex functions (e.g., <code>ft_substr</code>, <code>ft_strjoin</code>)</li>
         </ul>
     </section>
-    <section>
+    <section id="bonus-part">
         <h2>Bonus Part</h2>
         <p>If the mandatory part is perfect, you can extend your library with additional features such as list manipulation functions:</p>
         <ul>
@@ -44,11 +55,11 @@
             <li><code>ft_lstlast</code>: Returns the last element of a list.</li>
         </ul>
     </section>
-    <section>
+    <section id="compilation">
         <h2>Compilation</h2>
         <p>Compile the library using the Makefile provided, ensuring all rules like <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> are present to manage the library properly.</p>
     </section>
-    <section>
+    <section id="feedback">
         <h2>Feedback</h2>
         <p>The libft is a continuation of what was done during the piscine. Consequently, it is not particularly difficult to implement. I strongly suggest doing the bonus tasks, which provide a simple first approach to linked lists, and more generally to data structures, concepts that will prove useful later on.</p>
     </section>
